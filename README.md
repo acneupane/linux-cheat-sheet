@@ -604,6 +604,43 @@ yum groupinstall                  # Install all packages in the selected group
 yum groupinstall “Web server”     # Install Web Server packages
 ```
 
+### Popular Options for Different Yum Commands
+
+```yum
+yum -y                              # Assume yes if prompted
+yum --assumeno                      # Assume no if prompted
+yum -q                              # Produce no output
+yum -v                              # Produce extra debugging output
+
+yum --noplugins                     # Run command without loading any yum plugins
+yum --disableplugin=                # Disable a particular plugin for single command
+
+yum --enableplugin=                 # Enable a plugin that is installed, but currently disabled
+yum --enableplugin=ps ps            # Show packages tied to running processes
+
+yum --enablerepo=                   # Enable currently disabled repo for a single command (wildcards okay)
+yum --disablerepo=                  # Disable currently enabled repo for a single command (wildcards okay)
+
+yum --downloadonly                  # Download to /var/cache/yum/arch/prod/repo/packages/, but don’t install
+yum install --downloadonly vsftpd   # Download vsftpd package to cache
+
+yum --filter-???=                   # Replace ??? with vendors, rpm-groups, arches, and others to filter output
+yum --changelog                     # Display changelog information of package
+yum find-repos-of-install           # Find which repository a package comes from
+yum needs-restarting                # Find processes that have been updated and need to restart
+yum repoclosure                     # Get unmet dependency list from repositories
+yum repoquery                       # Query remote repos and local RPM database
+yum repoquery --requires --resolve bash      # Show dependent packages
+yum reposync                        # Synchronize yum repositories to a local directory
+yum reposync -r rhel-atomic-host-beta-rpms   # Get packages from repo
+yum repotrack                       # Download a package and all its dependencies
+yum show-installed                  # List installed RPM packages and statistics
+yum verifytree                      # Check the local yum repository for consistency
+yum-complete-transaction            # Try to complete yum transactions that didn’t finish
+yumdb                               # Check or change the yum database
+yumdownloader                       # Download a package from a repo to current directory
+```
+
 ## Bash Profile
 
 - bash - `.bashrc`
