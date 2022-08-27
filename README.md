@@ -545,6 +545,22 @@ yum repo-pkgs my-rpms remove        # Remove all packages from my-rpms repo
 yum makecache                       # Download yum repository data to cache
 ```
 
+### Troubleshoot and Maintain Yum
+
+```yum
+yum check                           # Check the local RPM database for problems (runs for a long time)
+
+yum history                         # View and use yum transactions
+yum history list                    # List all yum install, update and erase actions
+yum history info 3                  # Show details of yum transaction 3
+yum history undo 3                  # Undo the yum action from transaction 3
+yum history redo 3                  # Redo the undone yum action from transaction 3
+
+clean                               # Clear out cached package data
+yum clean packages                  # Delete packages saved in cache
+yum clean all                       # Clean out all packages and meta data from cache
+```
+
 ## Bash Profile
 
 - bash - `.bashrc`
