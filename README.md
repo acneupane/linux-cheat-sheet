@@ -515,6 +515,8 @@ scp foo.txt ubuntu@hostname:/home/ubuntu # Copy foo.txt into the specified remot
 
 ## Yum Commands
 
+### YUM QUERIES
+
 ```yum
 yum list                        # List package names from repositories
 yum list available              # List all available packages
