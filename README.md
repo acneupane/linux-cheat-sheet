@@ -581,9 +581,9 @@ yum update-to                    # Update one or all packages to a particular ve
 
 yum upgrade                      # Update packages taking obsoletes into account
 
-yum localinstall                                   # Install a package from a local file, http, or ftp
-yum localinstall abc-1-1.i686.rpm                  # Install abc package from local directory
-yum localinstall http://myrepo/abc-1-1.i686.rpm    # Install abc from FTP site
+yum localinstall                                 # Install a package from a local file, http, or ftp
+yum localinstall abc-1-1.i686.rpm                # Install abc package from local directory
+yum localinstall http://myrepo/abc-1-1.i686.rpm  # Install abc from FTP site
 
 yum downgrade                     # Downgrade a package to an earlier version
 yum downgrade abc                 # Downgrade the abc package to an earlier version
