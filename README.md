@@ -516,11 +516,19 @@ scp foo.txt ubuntu@hostname:/home/ubuntu # Copy foo.txt into the specified remot
 ## Yum Commands
 
 ```yum
-yum list                      # List package names from repositories
-yum list available            # List all available packages
-yum list installed            # List all installed packages
-yum list all                  # List installed and available packages
-yum list kernel               # List installed and available kernel packages
+yum list                        # List package names from repositories
+yum list available              # List all available packages
+yum list installed              # List all installed packages
+yum list all                    # List installed and available packages
+yum list kernel                 # List installed and available kernel packages
+yum info                        # Display information about a package
+yum info vsftpd                 # List info about vsftpd package
+yum deplist                     # Display dependencies for a package
+yum deplist nfs-utils           # List dependencies and packages providing them
+yum provides                    # Find packages that provide the queried file
+yum provides “*bin/top”         # Show package that contains top command
+yum provides “*/README.top”     # Show package containing README.top file
+
 ```
 
 ## Bash Profile
