@@ -523,10 +523,13 @@ yum list available              # List all available packages
 yum list installed              # List all installed packages
 yum list all                    # List installed and available packages
 yum list kernel                 # List installed and available kernel packages
+
 yum info                        # Display information about a package
 yum info vsftpd                 # List info about vsftpd package
+
 yum deplist                     # Display dependencies for a package
 yum deplist nfs-utils           # List dependencies and packages providing them
+
 yum provides                    # Find packages that provide the queried file
 yum provides “*bin/top”         # Show package that contains top command
 yum provides “*/README.top”     # Show package containing README.top file
@@ -536,29 +539,32 @@ yum provides “*/README.top”     # Show package containing README.top file
 
 ```yum
 yum repolist                        # Display enabled software repositories
+
 yum repoinfo                        # Display information about enabled yum repositories *
 yum repoinfo rhel-7-server-rpms     # See info on rhel-7-server-rpms repo
+
 yum repo-pkgs                       # Work with packages in a particular repository *
 yum repo-pkgs my-rpms list          # List packages from my-rpms repo
 yum repo-pkgs my-rpms install       # Install all packages from my-rpms repo
 yum repo-pkgs my-rpms remove        # Remove all packages from my-rpms repo
+
 yum makecache                       # Download yum repository data to cache
 ```
 
 ### Troubleshoot and Maintain Yum
 
 ```yum
-yum check                           # Check the local RPM database for problems (runs for a long time)
+yum check                        # Check the local RPM database for problems (runs for a long time)
 
-yum history                         # View and use yum transactions
-yum history list                    # List all yum install, update and erase actions
-yum history info 3                  # Show details of yum transaction 3
-yum history undo 3                  # Undo the yum action from transaction 3
-yum history redo 3                  # Redo the undone yum action from transaction 3
+yum history                      # View and use yum transactions
+yum history list                 # List all yum install, update and erase actions
+yum history info 3               # Show details of yum transaction 3
+yum history undo 3               # Undo the yum action from transaction 3
+yum history redo 3               # Redo the undone yum action from transaction 3
 
-clean                               # Clear out cached package data
-yum clean packages                  # Delete packages saved in cache
-yum clean all                       # Clean out all packages and meta data from cache
+clean                            # Clear out cached package data
+yum clean packages               # Delete packages saved in cache
+yum clean all                    # Clean out all packages and meta data from cache
 ```
 
 ## Bash Profile
