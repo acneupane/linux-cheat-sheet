@@ -515,7 +515,7 @@ scp foo.txt ubuntu@hostname:/home/ubuntu # Copy foo.txt into the specified remot
 
 ## Yum Commands
 
-### YUM QUERIES
+### Yum Queries
 
 ```yum
 yum list                        # List package names from repositories
@@ -530,7 +530,19 @@ yum deplist nfs-utils           # List dependencies and packages providing them
 yum provides                    # Find packages that provide the queried file
 yum provides “*bin/top”         # Show package that contains top command
 yum provides “*/README.top”     # Show package containing README.top file
+```
 
+### Manage Yum Repositories
+
+```yum
+yum repolist                        # Display enabled software repositories
+yum repoinfo                        # Display information about enabled yum repositories *
+yum repoinfo rhel-7-server-rpms     # See info on rhel-7-server-rpms repo
+yum repo-pkgs                       # Work with packages in a particular repository *
+yum repo-pkgs my-rpms list          # List packages from my-rpms repo
+yum repo-pkgs my-rpms install       # Install all packages from my-rpms repo
+yum repo-pkgs my-rpms remove        # Remove all packages from my-rpms repo
+yum makecache                       # Download yum repository data to cache
 ```
 
 ## Bash Profile
