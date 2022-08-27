@@ -567,6 +567,43 @@ yum clean packages               # Delete packages saved in cache
 yum clean all                    # Clean out all packages and meta data from cache
 ```
 
+### Install, Remove and Upgrade Packages with Yum
+
+```yum
+yum install                      # View and use yum transactions
+yum install vsftpd               # Install the vsftpd package
+
+yum update                       # Update all packages with available updates
+yum update httpd                 # Update the httpd package (if available)
+yum update --security            # Apply security-related package updates
+
+yum update-to                    # Update one or all packages to a particular version
+
+yum upgrade                      # Update packages taking obsoletes into account
+
+yum localinstall                                   # Install a package from a local file, http, or ftp
+yum localinstall abc-1-1.i686.rpm                  # Install abc package from local directory
+yum localinstall http://myrepo/abc-1-1.i686.rpm    # Install abc from FTP site
+
+yum downgrade                     # Downgrade a package to an earlier version
+yum downgrade abc                 # Downgrade the abc package to an earlier version
+
+yum reinstall                     # Reinstall the current version of a package
+yum reinstall util-linux          # Reinstall util-linux (to replace any deleted files)
+
+yum swap                          # Remove one package and install another
+yum swap ftp lftp                 # Remove ftp package and install lftp package
+
+yum remove                        # Remove a package (and possibly dependencies) from your system
+yum remove vsftpd                 # Remove the vsftpd package and dependencies
+
+yum autoremove                    # Same as remove, plus removes additional unneeded packages *
+yum autoremove httpd              # Remove httpd and other unneeded packages
+
+yum groupinstall                  # Install all packages in the selected group
+yum groupinstall “Web server”     # Install Web Server packages
+```
+
 ## Bash Profile
 
 - bash - `.bashrc`
