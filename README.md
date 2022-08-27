@@ -5,6 +5,7 @@
 ## Command History
 
 ```bash
+|             # Use either short or full command option
 !!            # Run the last command
 
 touch foo.sh
