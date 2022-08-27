@@ -513,6 +513,16 @@ $ ssh name
 scp foo.txt ubuntu@hostname:/home/ubuntu # Copy foo.txt into the specified remote directory
 ```
 
+## Yum Commands
+
+```yum
+yum list                      # List package names from repositories
+yum list available            # List all available packages
+yum list installed            # List all installed packages
+yum list all                  # List installed and available packages
+yum list kernel               # List installed and available kernel packages
+```
+
 ## Bash Profile
 
 - bash - `.bashrc`
