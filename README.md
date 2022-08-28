@@ -432,16 +432,46 @@ wget -O|--output-document foo.txt https://example.com/file.txt # Output to a fil
 ## Network Troubleshooting
 
 ```bash
-ping example.com            # Send multiple ping requests using the ICMP protocol
-ping -c 10 -i 5 example.com # Make 10 attempts, 5 seconds apart
+ping 8.8.8.8                  # Ping a server at 8.8.8.8 over IPv4
+ping -c 10 -i 5 example.com   # Make 10 attempts, 5 seconds apart
+ping6 example.com             # Ping a server at example.com over IPv6
 
 ip addr                     # List IP addresses on the system
 ip route show               # Show IP addresses to router
 
 netstat -i|--interfaces     # List all network interfaces and in/out usage
-netstat -l|--listening      # List all open ports
+netstat -l|--listening      # List all listening/open ports
+netstat -a|--all            # List all ports
+netstat -r|--route          # Display routing tables
 
 traceroute example.com      # List all servers the network traffic goes through
+
+nslookup example.com        # Display your DNS server and target IP address
+
+telnet 192.168.142.138 110  # Using telnet to check for open ports   
+
+systemctl restart network   # Restart network service
+
+tcpdump -i eth0             # Show live packets from interface eth0
+
+nmcli device                        # Display network devices
+nmcli device show eth0              # Show information about eth0 device
+nmcli connection                    # Show network connections
+nmcli connection up eth0            # Bring connection eth0 up
+
+ip route                            # Show current routes
+route add default gw 10.0.0.1       # Add 10.0.0.1 as default gateway to routing table
+ip addr show                        # Show your local IP address
+ip neighbor show                    # Show neighbors
+arp                                 # Show neighbors
+
+firewall-cmd --get-active-zones                         # List active firewall zones
+firewall-cmd -–change-interface eth0 --zone=example     # Place eth0 into example zone
+firewall-cmd --get-services                             # List all defined services
+firewall-cmd --add-service samba --zone=example         # Add samba ports to example zone
+firewall-cmd --add-port=123/tcp --zone=example          # Add port 123 to example zone
+firewall-cmd --permanent                                # Add this flag to make a change persistent
+
 
 mtr -w|--report-wide example.com                                    # Continually list all servers the network traffic goes through
 mtr -r|--report -w|--report-wide -c|--report-cycles 100 example.com # Output a report that lists network traffic 100 times
