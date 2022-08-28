@@ -671,6 +671,68 @@ yumdb                               # Check or change the yum database
 yumdownloader                       # Download a package from a repo to current directory
 ```
 
+## Important Log files:
+
+* `/var/log/messages`
+  - This log file contains generic system activity logs.
+  - It is mainly used to store informational and non-critical system messages.
+  - non-kernel boot errors, application-related service errors, messages logged
+    during system startup
+  - first log file to check on any problem
+ 
+* `/var/log/secure`
+  - authentication related events
+  - failed login attempts
+  - All user authentication events are logged at /var/log/secure
+
+* `/var/log/boot.log`
+  - system initialization script, /etc/init.d/bootmisc.sh, sends all bootup
+    messages to this log file
+  - Can also be useful to determine the duration of system downtime caused by 
+    an unexpected shutdown.
+  - issues related to improper shutdown, unplanned reboots or booting failures
+
+* `/var/log/dmesg`
+  - Kernel ring buffer messages, Information related to hardware devices and
+    their drivers
+  - useful for dedicated server customers mostly
+
+* `/var/log/kern.log`
+  - logged by kernel, troubleshooting kernel related errors
+
+* `/var/log/apt/history.log`
+  - package installation and removal information 
+
+* `/var/log/apport.log`
+  - saves information about crashes
+
+* `/var/log/installer`
+  - created during installation
+ 
+* `/var/log/dist-upgrade/apt.log`
+  - information during distribution upgrades
+
+* `/var/log/dpkg.log`
+  - low level details of package install and remove with dpkg
+
+* `/var/log/Xorg.log`
+  - information of the graphics driver, its failures, warnings etc
+
+* `/var/log/faillog`
+* `/var/log/cron`
+* `/var/log/yum.log`
+* `/var/log/mail.log`  -  `/var/log/maillog`
+  - information about postfix, smtpd, MailScanner, SpamAssassain or any other
+    email related services
+
+* ` /var/log/httpd/`
+  - Apache serverlogs , main logs are: error_log and access_log.
+  - All access requests received over HTTP are stored in the access_log file.
+  - Logs the IP address and user ID of all clients that make connection
+    requests to the server.
+
+* `/var/log/mysqld.log`
+
 ## Bash Profile
 
 - bash - `.bashrc`
